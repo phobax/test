@@ -5,8 +5,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script type="text/javascript" src="./colors.js"></script>
+
+    </script>
+    <style media="screen">
+      .elem {
+        padding: 0px;
+        margin: 10px;
+        width:100px;
+      }
+
+      .colorbox {
+        display: block;
+        border: 1px solid black;
+        width:200px;
+        height:30px;
+      }
+
+
+    </style>
+
+
+    <script type="text/javascript">
+
+
+    var CNT = 0;
+    var MAX_COLORS = 10;
+
+    function getNextColor() {
+      CNT = (CNT+1)%MAX_COLORS;
+      return COLORS[CNT];
+    }
+
+    function onOver(e) {
+      e.target.parentNode.querySelector(".colorbox").style.background = getNextColor();
+    }
+
+
+
+
+    function start() {
+
+      initColors(MAX_COLORS);
+      for (var elem of document.querySelectorAll(".link")) {
+        elem.addEventListener("mouseover", onOver);
+        // elem.parentNode.querySelector(".colorbox").style.background = getNextColor()
+      }
+    }
+
+
+    // window.onload = ()=>{}
+    window.addEventListener("load", start);
+
+
+
+
+
+
+    </script>
+
+
 </head>
 <body>
- hell helloo    
+
+
+  <div class="elem">
+    <span class="link">eins</span><span class="colorbox">x</span>
+  </div>
+  <div class="elem">
+    <span class="link">zwei</span><span class="colorbox">x</span>
+  </div>
+  <div class="elem">
+    <span class="link">drei</span><span class="colorbox">x</span>
+  </div>
+  <div class="elem">
+    <span class="link">drei</span><span class="colorbox">x</span>
+  </div>
+  <div class="elem">
+    <span class="link">drei</span><span class="colorbox">x</span>
+  </div>
+  <div class="elem">
+    <span class="link">drei</span><span class="colorbox">x</span>
+  </div>
+  <div class="elem">
+    <span class="link">drei</span><span class="colorbox">x</span>
+  </div>
+  <div class="elem">
+    <span class="link">drei</span><span class="colorbox">x</span>
+  </div>
+  <div class="elem">
+    <span class="link">drei</span><span class="colorbox">x</span>
+  </div>
+  <div class="elem">
+    <span class="link">drei</span><span class="colorbox">x</span>
+  </div>
+  <div class="elem">
+    <span class="link">drei</span><span class="colorbox">x</span>
+  </div>
+
+
+
 </body>
 </html>
